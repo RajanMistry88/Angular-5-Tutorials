@@ -1,0 +1,101 @@
+<app-Header>
+    <!--Angular Header goes here... -->
+</app-Header>
+<br><br><br><h3> </h3>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 style="text-align:center"><b>Profile Module</b></h3>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 style="text-align:center"><b>Profile</b></h4>
+            </div>
+            <div class="panel-body">
+                <form [formGroup]="profileForm" (ngSubmit)="fnProfileUpdate(profileForm)">
+                    <p>
+                        <label>User Name</label>
+                        <input type="text" formControlName='UserName' placeholder="Enter Your UserName" class="form-control">
+                    </p>
+                    <div *ngFor="let validation of validationMessages.username">
+                        <div class="text-danger" *ngIf="profileForm.get('UserName').hasError(validation.type) && (profileForm.get('UserName').dirty || profileForm.get('UserName').touched)">{{validation.message}}
+                        </div>
+                    </div>
+
+                    <p>
+                        <label>Email Address</label>
+                        <input type="email" name="EmailAddress" formControlName='EmailAddress' placeholder="Enter Your Email Address" class="form-control">
+                    </p>
+                    <div *ngFor="let validation of validationMessages.email">
+                        <div class="text-danger" *ngIf="profileForm.get('EmailAddress').hasError(validation.type) && (profileForm.get('EmailAddress').dirty || profileForm.get('EmailAddress').touched)">{{validation.message}}
+                        </div>
+                    </div>
+                    <p>
+                        <label>Mobile No</label>
+                        <input type="tel" name="MobileNo" formControlName='MobileNo' placeholder="Enter Your Mobile No" class="form-control">
+                    </p>
+                    <div *ngFor="let validation of validationMessages.mobile_number">
+                        <div class="text-danger" *ngIf="profileForm.get('MobileNo').hasError(validation.type) && (profileForm.get('MobileNo').dirty || profileForm.get('MobileNo').touched)">{{validation.message}}
+                        </div>
+                    </div>
+                    <p>
+                        <label>Address</label>
+                        <textarea type="text" name="Address" formControlName='Address' placeholder="Enter Your Address" class="form-control"></textarea>
+                    </p>
+                    <div *ngFor="let validation of validationMessages.address">
+                        <div class="text-danger" *ngIf="profileForm.get('Address').hasError(validation.type) && (profileForm.get('Address').dirty || profileForm.get('Address').touched)">{{validation.message}}
+                        </div>
+                    </div>
+                    <button type="Submit" class="btn" [disabled]='!profileForm.valid'>Update</button>
+                    <!-- here i m adding Font Color Red To Display Error Message -->
+                    <font class="text-success" *ngIf="successMessage != null"> {{successMessage}}</font>
+                    <font class="text-danger" *ngIf="errorMessage != null">{{errorMessage}}</font>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-8">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h4>Profile Component</h4>
+            </div>
+            <div class="panel-body">
+                <p>
+                    ProfileInfo page is allow user to update his/her recode. We store UserID in Session when user login to the application so
+                    using that ID we verify user and get all information and display in the Form.
+                </p>
+                <ul>
+                    <li>
+                        <b>1. Profile.component.html</b>('Find Component inside src/pages/Profile/ Folder &raquo; Profile.component.html')
+                        <p>Profile html component we use form tag which is use for validation.</p>
+                    </li>
+                    <li>
+                        <b>2. Profile.component.ts</b>('Find Component inside src/pages/Profile/ Folder &raquo; Profile.component.ts')
+                        <p>
+                            we create 3 method in this component 1. ngOnInit() for Validation and 2. fuGetProfile() will get all the user information
+                            and display on the form 3. fnProfileUpdate() will Edit and Update the user information. In this
+                            component we share all the input data which are coming from View to the <a
+                                target="_blank" href="https://github.com/RajanMistry88/Asp.Net-Mvc-WebAPI-Tutorials">WebAPI</a>
+                            and use PUT Request to update recode. to get detail of the user we use GET Request<br>
+                        </p>
+                    </li>
+                    <li>
+                        <b>3. Profile.component.css</b> ('Find Component inside src/pages/Profile/ Folder &raquo; Profile.component.css')
+                        <p> if you want to create custom Css for this page you can create over here, so it will only affect
+                            on this page
+                        </p>
+                    </li>
+                </ul>
+                <hr>
+                <a style="float:left" routerLink="/designing">Design Used</a> <a style="float:right" routerLink="/information">Application
+                    Info
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

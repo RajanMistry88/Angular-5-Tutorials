@@ -1,0 +1,144 @@
+<br><br>
+<div>
+    <div class="sty jumbotron">
+        <h1>{{ " Basic Introduction of "+ title }}</h1>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title"><a target="_blank" href="https://angular.io/guide/template-syntax">Databinding &raquo;</a></h3>
+        </div>
+        <div class="panel-body">
+            <div class="well">
+                <h3>Property Binding</h3>
+                <hr>
+                <label>City</label>
+                <input type="text" [value]="city" class="form-control" readonly/>
+            </div>
+            <div class="well">
+                <h3>Event Binding</h3>
+                <hr>
+                <span>{{ 'Current Time: '+ currentTime }}</span>
+                <hr>
+                <button class="btn btn-primary" (click)="showCurrentTime()">Show Current Time</button>
+            </div>
+            <div class="well">
+                <h3>Two way Binding</h3>
+                <hr>
+                <span>{{ 'Model Property Value : '+ modelProperty }}</span>
+                <hr>
+                <label>ModelProperty</label>
+                <input type="text" class="form-control" [(ngModel)]="modelProperty">
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title"><a target="_blank" href="https://angular.io/guide/attribute-directives">Directives &raquo;</a></h3>
+        </div>
+        <div class="panel-body">
+            <div class="well">
+                <h3>NgIf - Structural Directive</h3>
+                <hr/>
+                <div *ngIf="showStatus">This text wont be displayed</div>
+                <hr>
+                <button class="btn btn-primary" (click)="toggleStatus()">{{ showStatus?"Hide":"Show" }}</button>
+            </div>
+            <div class="well">
+                <h3>NgForOf - Structural Directive</h3>
+                <hr/>
+                <ol>
+                    <li *ngFor="let city of cities">{{ city }}</li>
+                </ol>
+            </div>
+            <div class="well">
+                <h3>NgClass - Attribute Directive</h3>
+                <hr/>
+                <button class="btn" [ngClass]="{'btn-primary': isPrimary}" (click)="isPrimary=!isPrimary">{{isPrimary?"Primary
+                    Button":"Default Button"}}</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title"><a target="_blank" href="https://angular.io/guide/pipes">Pipes &raquo;</a></h3>
+        </div>
+        <div class="panel-body">
+            <div class="well">
+                <h3>UpperCase Pipe</h3>
+                <hr> {{ 'capgemini' | uppercase }}
+            </div>
+            <div class="well">
+                <h3>Date Pipe</h3>
+                <hr> {{ today | date : 'dd, EEEE MMMM yyyy' }}
+            </div>
+            <div class="well">
+                <h3>Currency Pipe</h3>
+                <hr> {{ 200 | currency:'INR':true }}
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">JQuery & Sweet Alert using CDN Link (add you CDN links in index.html file)</h3>
+        </div>
+        <div class="panel-body">
+            <div class="well">
+                <h1 class="title" style="display:none">
+                    {{title}}
+                </h1>
+                <table>
+                    <tr>
+                        <td> <a target="_blank" href="../../assets/Import Jquery CDN link.PNG">
+                                <img id="myImg" src="../../assets/Import Jquery CDN link.PNG" style="width:300px;height:auto;">
+                                <br><p>CDN Jquery and SweetAlert in index.html file</p>
+                            </a></td>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <td>
+                            <a target="_blank" href="../../assets/JQuery Sweet Alert Import in TS File.PNG">
+                                <img id="myImg" src="../../assets/JQuery Sweet Alert Import in TS File.PNG" style="width:300px;height:auto;">
+                                <br><p> Import Jquery and SweetAlert in component.ts file.</p>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <hr>
+                <button class="btn btn-primary" (click)="Jquerytoggle()"> JQuery click here</button>
+            </div>
+            <div class="well">
+                <h1 style="display:none">Sweet Alert</h1>
+                <hr>
+                <button class="btn btn-primary" (click)="SweetAlertSuccess()">Success</button>
+                <button class="btn btn-primary" (click)="SweetAlertError()">Error</button>
+                <button class="btn btn-primary" (click)="SweetAlertWarning()">Warning</button>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title"><a target="_blank" href="https://angular.io/tutorial/toh-pt4">Services &raquo;</a></h3>
+        </div>
+        <div class="panel-body">
+            <h3>Product List</h3>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>ProductName</th>
+                        <th>Discription</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of productJsonList">
+                        <td>{{ product.ProductID }}</td>
+                        <td>{{ product.ProductName }}</td>
+                        <td>{{ product.Discription }}</td>
+                        <td>{{ product.Price }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

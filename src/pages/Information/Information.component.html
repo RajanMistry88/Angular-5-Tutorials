@@ -1,0 +1,138 @@
+<app-Header>
+    <!--Angular Header goes here... -->
+</app-Header>
+<br><br><br><h3> </h3>
+<!-- Start Page Content -->
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 style="text-align:center"><b>Application Information</b></h3>
+    </div>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h5 style="text-align:center"><b>Create Application Environment</b></h5>
+    </div>
+    <div class="panel-body">
+        <p><b>1<sup>st</sup></b> thing you have to Create DataBase to start this Tutorial Download the <a target="_blank"
+                href="~/DataBase/MvcTutorial(14-08-2018).bak" download>DataBase</a> file and <a href="https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms?view=sql-server-2017"
+                target="_blank">Restore</a> in your Database or download <a href="~/DataBase/MvcTutorialscript(14-08-2018).sql"
+                download>Script</a> file and Run in Your Sql Server so it will Automatic Creatre everything.</p>
+        <p><b>2<sup>nd</sup></b> Download or Clone <a target="_blank" href="https://github.com/RajanMistry88/Asp.Net-Mvc-WebAPI-Tutorials">WebAPI</a>
+            Open Project and generate or change connection string in your webconfig file, there are 2 ways
+            <b>1. write down in your<a href="https://www.aspsnippets.com/Articles/SQL-Server-Connection-String-for-Windows-Authentication-in-WebConfig-file-in-ASPNet.aspx"
+                    target="_blank"> Web.config</a> File, 2. Use <a target="_blank" href="https://www.c-sharpcorner.com/article/introduce-entity-framework-with-ado-net-entity-data-model/">
+                    ADO.net Entity-Framework</a>.</b> Once it's done Run API in local and copy the API path ('http://localhost:62952/api').<br>
+            <b>Note: If you want to use this API for other project, then you have to host this webAPI in hosting services
+                and use that domain name('http://www.mvcwebapi.com/api') to the Angular Project.</b>
+        </p>
+        <p><b>3<sup>rd</sup></b> thing you have to do is Download or Clone <a target="_blank" href="https://github.com/RajanMistry88/Angular-5-Tutorials">Angular-5</a>
+            (or Zip file) Project. Open Folder src/provider/ &raquo; HttpManager.module.ts file. the WebAPI path you have copied replace
+            with this path ('URL: string = "http://localhost:62952/api"').<br>
+            <b>Note: Make sure when you publish or your local path is change you just need to change only this path for example
+                if you publish this API on server then enter domain name : URL:string = "http://www.mvcwebapi.com/api" in
+                HttpManager.module.ts file.</b>
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h5 style="text-align:center"><a routerLink="/about" class="btn btn-info">Application Module Cover</a></h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h5 style="text-align:center"><a routerLink="/designing" class="btn btn-info">Application Design</a></h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h5 style="text-align:center"><a routerLink="/contact" class="btn btn-info">Video Tutorial to Learn</a></h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="panel panel-info">
+    <div class="panel-heading"><b>Application Coding Information</b></div>
+    <div class="panel-body">
+        <p>
+            In this Application for all the module we Created 3 Component <b>1. CssComponent filename.component.css, 2. HtmlComponent
+                filename.component.html, 3. TsComponent filename.component.ts</b>
+        </p>
+        <ul>
+            <h4><b>Component</b></h4>
+            <p>Components are basically classes that interact with the .html file of the component, which gets displayed
+                on the browser.</p>
+            <li>
+                <b>1. app.component.css</b>
+                <p>
+                    here you can define the Global Css for all the component in the project.
+                </p>
+            </li>
+            <li>
+                <b>2. app.component.html</b>
+                <p>in this component we create Global html design. For Designing Information <a routerLink="/designing">Click
+                        here
+                    </a></p>
+            </li>
+            <li>
+                <b>3. app.component.ts</b>
+                <p>
+                    over here we can write our applicaiton algorithm.
+                </p>
+            </li>
+            <li>
+                <b>3. app.module.ts</b>
+                <p>
+                    in this file we import all the component and provider which we want to use in project.
+                </p>
+            </li>
+            <hr>
+            <h4><b>Services</b></h4>
+            <p>In this Project we use Services which is in the provider Folder. we use Dependency-injection for this services
+                and it is use for entier Project. For more info <a target="_blank"
+                href="https://angular.io/tutorial/toh-pt4">click here</a></p>
+            <li>
+                <b>1. GlobalManager.module.ts</b>
+                <p>
+                    In this Service we create 2 mehtod.<br> 1. fnCheckSession() this funcation check the user session and
+                    redirect as per that.<br> 2. fnClearSession() this funcation Clear all Session. 
+                </p>
+            </li>
+            <li>
+                <b>2. HttpManager.module.ts</b>
+                <p>
+                    In this Service we are using REST full WebAPI. to use this webapi in our project we import HttpClient using that we Create
+                    GET, POST, PUT, DELETE method. For more info <a target="_blank" href="https://angular.io/tutorial/toh-pt6">click
+                        here
+                    </a>
+                </p>
+            </li>
+            <li>
+                <b>3. RoutingManager.module.ts</b>
+                <p>
+                    In this Service we import RouterModule to route our component. also import the components. For more info <a
+                        target="_blank" href="https://angular.io/tutorial/toh-pt5">click here</a></p>
+            </li>
+            <li>
+                <b>4. ValidationManager.module.ts</b>
+                <p>
+                    In this Service we import forms for validation then we create all validation message in validationMessage() funcation.<br>                    To
+                    Check mobile no, email format etc. we use regular expression. For more info <a target="_blank" href="https://angular.io/guide/form-validation">click
+                        here
+                    </a>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- End Page Content -->

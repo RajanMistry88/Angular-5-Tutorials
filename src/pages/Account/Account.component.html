@@ -1,0 +1,90 @@
+<app-Header>
+    <!--Angular Header goes here... -->
+</app-Header>
+<br><br><br><h3> </h3>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 style="text-align:center"><b>Account Module</b></h3>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 style="text-align:center"><b>Deactivate Account</b></h4>
+            </div>
+            <div class="panel-body">
+                <p>
+                    <label>Deactivate Your Account</label>
+                    <br>
+                    <button type="button" class="btn" (click)="fnDeactivateProfile()">Deactivate</button>
+                </p>
+                <!-- here i m adding Font Color Red To Display Error Message -->
+                <font class="text-success" *ngIf="successMessage != null"> {{successMessage}}</font>
+                <font class="text-danger" *ngIf="errorMessage != null">{{errorMessage}}</font>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h4>Deactivate Component</h4>
+            </div>
+            <div class="panel-body">
+                <p>
+                    Deactivate Button will allow user to deactivate his/her account only change the status of the user into the database. but
+                    he/she will not be login after the deactivate account. to login again user have to active his/her account.
+                </p>
+                <!-- <hr>
+                <a style="float:left" href="/Home/Designing">Design Used</a> <a style="float:right" href="/Home/Information">Application
+                    Info
+                </a> -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 style="text-align:center"><b>Delete Account</b></h4>
+            </div>
+            <div class="panel-body">
+                <p>
+                    <label>Delete Your Account</label>
+                    <br>
+                    <button type="Submit" class="btn" (click)="fnDeleteProfile()">Delete</button>
+                </p> 
+                <!-- <br>
+                <h1 class="title" style="display:none">
+                    {{title}}
+                </h1>
+                <button (click)="toggleTitle()"> clickhere</button> -->
+                <!-- here i m adding Font Color Red To Display Error Message -->
+                <font class="text-success" *ngIf="successMessage != null"> {{successMessage}}</font>
+                <font class="text-danger" *ngIf="errorMessage != null">{{errorMessage}}</font>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h4>Delete Component</h4>
+            </div>
+            <div class="panel-body">
+                <p>
+                    Delete Button will allow user to delete Data from the database. after delete the data user cann't be login with the same
+                    Mobile No he/she has to create New account.
+                </p>
+                <!-- <hr>
+                <a style="float:left" href="/Home/Designing">Design Used</a> <a style="float:right" href="/Home/Information">Application
+                    Info
+                </a> -->
+            </div>
+        </div>
+    </div>
+</div>

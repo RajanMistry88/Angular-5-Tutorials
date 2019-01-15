@@ -1,0 +1,132 @@
+<br>
+
+<br><br><h3> </h3>
+<div class="panel panel-info">
+    <div class="panel-heading">In this Project we are using Simple Bootstrap design. visit this Design.component.html (Folder
+        Src &raquo; pages &raquo; Design &raquo; Design.component.html) page for better understanding how to apply css.
+        <br /><b>To Use this Default bootstrap Css in other Projects Follow this step <br /> 1. npm install bootstrap@3.3.7
+            hit this command install the package.<br /> 2. Open .angular-cli.json file and press Ctrl+F Search "styles" and
+            "scripts" find bootstrap file location and add css into style "../node_modules/bootstrap/dist/css/bootstrap.css"<br
+            /> 3. Or add CDN link in index.html file </b>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 style="text-align:center"><b>Design Integration</b></h4>
+    </div>
+    <div class="panel-body">
+        <!-- Apply CSS For TextBox -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">TextBox without Apply css</div>
+                </div>
+                <label>Mobile No</label>
+                <input type="text" name="MobileNo" placeholder="Enter Your Mobile No">
+
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">TextBox Apply css</div>
+                </div>
+                <label>Mobile No</label>
+                <!-- @Html.TextBoxFor(model => model.MobileNo, new { @class = "form-control" }) -->
+                <input type="tel" name='MobileNo' class="form-control">
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">EditorFor Apply css and extra parameter</div>
+                </div>
+                <label>Mobile No</label>
+                <input type="tel" name='MobileNo' placeholder="Enter Your Mobile No" class="form-control">
+
+                <!-- @Html.EditorFor(model => model.MobileNo, new { htmlAttributes = new { @class = "form-control", @type = "number", @placeholder = "Enter Your Mobile No('Not allow Character')" } }) -->
+
+            </div>
+        </div>
+        <br />
+        <!-- Apply Css to Lable or Text -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Error Message without Apply css</div>
+                </div>
+                Mobile No is Required.
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Error Message Apply css</div>
+                </div>
+                <!-- Apply individual css for Message -->
+                <font color=red>Mobile No is Required.</font>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Use global css</div>
+                </div>
+                <!-- Add this css file in you Bootstrap.cs file and access globally in every page by using Clss  -->
+                <style>
+                    .Error {
+                        color: red;
+                    }
+                </style>
+
+                <p class="Error">Mobile No is Required.</p>
+
+            </div>
+        </div>
+        <br />
+        <!-- Apply Css to Button -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Button & HyperLink without Apply css</div>
+                </div>
+                <button id="btnSubmit">Submit</button>
+                <a href="#">Submit</a>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Button & HyperLink Apply css</div>
+                </div>
+                <!-- Apply individual css -->
+                <style>
+                    .button {
+                        color: #fff;
+                        background-color: red;
+                        border-color: darkred;
+                    }
+                </style>
+                <button id="btnSubmit" class="button">Submit</button>
+                <a href="#" class="btn btn-default">Submit</a>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Use global Bootstrap.css</div>
+                </div>
+                <!-- this css is already available in you Bootstrap.cs file and access globally in every page by using Clss  -->
+                <button id="btnSubmit" class="btn btn-success">Submit</button>
+                <a href="#" class="btn btn-warning">Cancel</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Panels with Contextual Classes -->
+<div class="panel panel-primary">
+    <div class="panel-heading">Panels with Contextual Classes</div>
+</div>
+
+<div class="panel panel-success">
+    <div class="panel-heading">Panel with panel-success class</div>
+    <div class="panel-body">
+        This Panel class is already created in Bootstrap.css use this css for change panel color
+        <b>(class="panel panel-default",class="panel panel-primary",class="panel panel-success",class="panel panel-warning",class="panel
+            panel-danger")
+        </b>
+        More Detials <a target="_blank" href="https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_panels_contextual&stacked=h">Click
+            here
+        </a>
+    </div>
+</div>

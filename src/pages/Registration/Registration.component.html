@@ -1,0 +1,118 @@
+<app-Header>
+    <!--Angular Header goes here... -->
+</app-Header>
+<br><br><br><h3> </h3>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 style="text-align:center"><b>Registration Module</b></h3>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 style="text-align:center"><b>Registration</b></h4>
+            </div>
+            <div class="panel-body">
+                <form [formGroup]='registrationForm' (ngSubmit)="fnregistration(registrationForm)">
+                    <p>
+                        <label>User Name</label>
+                        <input type="text" formControlName='UserName' placeholder="Enter Your UserName" class="form-control">
+                    </p>
+                    <div *ngFor="let validation of validationMessages.username">
+                        <div class="text-danger" *ngIf="registrationForm.get('UserName').hasError(validation.type) && (registrationForm.get('UserName').dirty || registrationForm.get('UserName').touched)">{{validation.message}}
+                        </div>
+                    </div>
+
+                    <p>
+                        <label>Email Address</label>
+                        <input type="email" formControlName='EmailAddress' placeholder="Enter Your Email Address" class="form-control">
+                    </p>
+                    <div *ngFor="let validation of validationMessages.email">
+                        <div class="text-danger" *ngIf="registrationForm.get('EmailAddress').hasError(validation.type) && (registrationForm.get('EmailAddress').dirty || registrationForm.get('EmailAddress').touched)">{{validation.message}}
+                        </div>
+                    </div>
+                    <p>
+                        <label>Mobile No</label>
+                        <input type="tel" formControlName='MobileNo' placeholder="Enter Your Mobile No" class="form-control">
+                    </p>
+                    <div *ngFor="let validation of validationMessages.mobile_number">
+                        <div class="text-danger" *ngIf="registrationForm.get('MobileNo').hasError(validation.type) && (registrationForm.get('MobileNo').dirty || registrationForm.get('MobileNo').touched)">{{validation.message}}
+                        </div>
+                    </div>
+                    <p>
+                        <label>Address</label>
+                        <textarea type="text" formControlName='Address' placeholder="Enter Your Address" class="form-control"></textarea>
+                    </p>
+                    <div *ngFor="let validation of validationMessages.address">
+                        <div class="text-danger" *ngIf="registrationForm.get('Address').hasError(validation.type) && (registrationForm.get('Address').dirty || registrationForm.get('Address').touched)">{{validation.message}}
+                        </div>
+                    </div>
+                    <p>
+                        <label>Password</label>
+                        <input type="password" formControlName='Password' placeholder="Enter Your Password" class="form-control">
+                    </p>
+                    <div *ngFor="let validation of validationMessages.password">
+                        <div class="text-danger" *ngIf="registrationForm.get('Password').hasError(validation.type) && (registrationForm.get('Password').dirty || registrationForm.get('Password').touched)">{{validation.message}}
+                        </div>
+                    </div>
+                    <p>
+                        <label>Confirm Password</label>
+                        <input type="password" formControlName='ConfirmPassword' placeholder="Confirm Your Password" class="form-control">
+                    </p>
+                    <div *ngFor="let validation of validationMessages.confirm_password">
+                        <div class="text-danger" *ngIf="registrationForm.get('ConfirmPassword').hasError(validation.type) && (registrationForm.get('ConfirmPassword').dirty || registrationForm.get('ConfirmPassword').touched)">{{validation.message}}
+                        </div>
+                    </div>
+                    <button type="Submit" class="btn" [disabled]='!registrationForm.valid'>Register</button>
+                    <!-- here i m adding Font Color Red To Display Error Message -->
+                    <font class="text-success" *ngIf="successMessage != null"> {{successMessage}}</font>
+                    <font class="text-danger" *ngIf="errorMessage != null">{{errorMessage}}</font>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-8">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h4>Registration Component</h4>
+            </div>
+            <div class="panel-body">
+                <p>
+                    Registration page is the basic need of any Application. we take user information with that they access application features.
+                    So in this page we created 3 component which are lsited below.
+                </p>
+                <ul>
+                    <li>
+                        <b>1. Registration.component.html</b>('Find Component inside src/pages/Registration/ Folder &raquo;
+                        Registration.component.html')
+                        <p>Registration html component we use form tag which is use for validation. you can see in this page.</p>
+                    </li>
+                    <li>
+                        <b>2. Registration.component.ts</b>('Find Component inside src/pages/Registration/ Folder &raquo;
+                        Registration.component.ts')
+                        <p>
+                            2 method in this component 1. ngOnInit() for Validation and 2. fnregistration() to insert user recode in Database. In this component we share all the registration
+                            Form input data of to the <a target="_blank" href="https://github.com/RajanMistry88/Asp.Net-Mvc-WebAPI-Tutorials">WebAPI</a>
+                            and use POST Request.<br>
+                        </p>
+                    </li>
+                    <li>
+                        <b>3. Registration.component.css</b> ('Find Component inside src/pages/Registration/ Folder &raquo;
+                        Registration.component.css')
+                        <p> if you want to create custom Css for this page you can create over here, so it will only affect
+                            on this page
+                        </p>
+                    </li>
+                </ul>
+                <hr>
+                <a style="float:left" routerLink="/designing">Design Used</a><a style="float:right" routerLink="/information">Application
+                    Info
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
