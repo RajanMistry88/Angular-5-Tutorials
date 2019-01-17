@@ -4,9 +4,9 @@ Angular 5 CRUD operation integrated with Microsoft Asp.net WebAPI and SQL Server
 Live Demo <a href="http://www.angular5tutorials.somee.com/" target="_blank">Click here</a><br/>
 
 <b>Overview</b><br>
-In this project i created simple website using Angular-5 and Bootstrap design. to store data i'm using SQL Server 2014 and to interact website with the database i have created .Net Mvc WebAPI as a services which store and retrieve all the data from database to the website.
+In this project i created simple website using Angular-5 and Bootstrap design. 
+I'm using SQL Server 2014 for the DataBase you can find the database backup file in Asp.Net Mvc CRUD Project folder MvcTutorial >> DataBase >> MvcTutorial.bak and Script file MvcTutorialscript.sql. for storing and retrieve data from the database we create WebAPI which is use as services.  
  
-
 <b>Environment setup</b><br>
 <b>Step 1:</b> Download Sql <a href="https://github.com/RajanMistry88/Asp.Net-Mvc-Tutorials/tree/master/MvcTutorial/DataBase" target="_blank">Database</a> file and Restore or
 Create Database in SQL Server. i have already added database bakup file in MvcTutorial >> DataBase >> MvcTutorial.bak 
