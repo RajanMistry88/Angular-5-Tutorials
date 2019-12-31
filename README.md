@@ -1,7 +1,7 @@
 # Angular-5-Tutorials
 Angular 5 CRUD operation integrated with Microsoft Asp.net WebAPI and SQL Server DataBase  
 
-Live Demo <a href="http://www.angular5tutorials.somee.com/" target="_blank">Click here</a><br/>
+Live Demo <a href="http://angulartutorial.rajanmistry.in/" target="_blank">Click here</a><br/>
 <a href="https://www.youtube.com/playlist?list=PL_i5XdFY8J5uS6QGwCViDQhmt56JrlOhk" target="_blank">Video link</a><br/>
 
 <b>Overview</b><br>
